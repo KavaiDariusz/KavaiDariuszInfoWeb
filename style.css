@@ -89,6 +89,18 @@ dl{
     }
 }
 ul{
-    font-size: larger;
+    font-size: large;
     font-weight: bold;
+}
+.TableFlow{
+    font-size: xx-large;
+}
+.ThisWebsite{
+    font-size: xx-large;
+}
+.PhysicsEngine{
+    font-size: xx-large;
+}
+.AlgorithmsVisualizer{
+    font-size: xx-large;
 }
