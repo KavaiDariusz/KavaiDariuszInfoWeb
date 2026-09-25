@@ -87,8 +87,14 @@
      }
  }
 
+ h1 {
+     background-color: #212121;
+     text-indent: 20px;
+     font-size: 2.5rem;
+ }
+
  /*For phones*/
- @media (max-width: 1400px) {
+ @media (max-width: 1500px) {
 
      .box {
          position: fixed;
@@ -120,6 +126,11 @@
          margin-top: 400px;
          min-height: 100vh;
      }
+
+     h1 {
+         text-indent: 20px;
+         font-size: 1.5rem;
+     }
  }
 
  .HoverHide1 {
@@ -143,13 +154,6 @@
  .Hover2:hover+.HoverHide2 {
      display: block;
      color: white;
- }
-
-
- h1 {
-     background-color: #212121;
-     text-indent: 20px;
-     font-size: 2.5rem;
  }
 
  h3 {
