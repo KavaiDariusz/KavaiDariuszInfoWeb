@@ -1,106 +1,269 @@
  body {
-    background-color: black;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 1%;
-}
-a{
-    color: inherit;
-}
-#matrix{
-    position: fixed;
-    display: grid;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+     background-color: black;
+     color: white;
+     font-family: Arial, Helvetica, sans-serif;
+     margin: 0;
+ }
 
-    .cell{
-        border: 1px solid #333;
-    }
-}
-.CentralGlass{
-    background-color: rgba(0,0,0,0.5);
-    box-shadow: 5px 10px 20px rgba(255, 255, 255, 0.4);
-    border-radius: 20px;
-    padding: 10px;
-    backdrop-filter: blur(10px);
-}
-.box {
-    display: flex;
-    position:relative;
-    background-color: #212121;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-radius: 20px;
-    height: 30%;
-    .circle{
-        position: relative;
-        height: 12em;
-        width:  12em;
-        background-color: white;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 5%;
-    }
-    .info{
-        li{
-            font-size: larger;
-            margin: 10px;
-            padding: 5px;
-        }
-    }
-}
+ a {
+     color: inherit;
+ }
 
-.HoverHide1 {
-  display: none;
-}
+ #matrix {
+     position: fixed;
+     inset: 0;
+     width: 100vw;
+     height: 100vh;
+     z-index: -1;
+     pointer-events: none;
+ }
 
-.Hover1:hover + .HoverHide1 {
-  display: block;
-  color: white;
-}
+ .CentralGlass {
+     margin-left: 1000px;
+     margin-right: 5%;
+
+     background-color: rgba(0, 0, 0, 0.5);
+     box-shadow: 5px 10px 20px rgba(255, 255, 255, 0.4);
+
+     border-radius: 20px;
+     padding: 10px;
+     backdrop-filter: blur(12px);
+ }
+
+ .box {
+     position: fixed;
+
+     top: 20px;
+     left: 20px;
+
+     width: clamp(400px, 40vw, 900px);
+     box-sizing: border-box;
+
+     display: grid;
+     grid-template-columns: minmax(120px, 1fr) minmax(0, 2fr);
+     align-items: center;
+
+     background-color: rgba(33, 33, 33, 0.5);
+     backdrop-filter: blur(12px);
+
+     padding: clamp(1rem, 2vw, 2rem);
+     border-radius: 20px;
+
+     min-height: 300px;
+     max-width: 900px;
+
+     .circle {
+         width: clamp(100px, 15vw, 18rem);
+         height: clamp(100px, 15vw, 18rem);
+
+         background-color: white;
+         border-radius: 50%;
+
+         overflow: hidden;
+         justify-self: center;
+     }
+
+     .circle img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         display: block;
+         object-position: center;
+     }
+
+     .info {
+         list-style: none;
+         margin: 0;
+         padding: 0;
+         margin-left: 20px;
+     }
+
+     .info li {
+         font-size: clamp(0.8rem, 1.3vw, 1.5rem);
+         margin: clamp(0.2rem, 0.5vw, 0.5rem);
+         padding: clamp(0.1rem, 0.25vw, 0.25rem);
+
+         overflow-wrap: anywhere;
+     }
+ }
+
+ /*For phones*/
+ @media (max-width: 1400px) {
+
+     .box {
+         position: fixed;
+
+         top: 10px;
+         left: 10px;
+         right: 10px;
+
+         width: auto;
+         padding: 1rem;
+
+         grid-template-columns: 120px 1fr;
+
+         .circle {
+             width: 100px;
+             height: 100px;
+         }
+
+         .info li {
+             font-size: 0.9rem;
+             margin: 0.2em;
+             padding: 0.1em;
+         }
+     }
+
+     .CentralGlass {
+         margin-left: 10px;
+         margin-right: 10px;
+         margin-top: 400px;
+         min-height: 100vh;
+     }
+ }
+
+ .HoverHide1 {
+     display: none;
+ }
+
+ .Hover1 {
+     font-size: 3rem;
+ }
+
+ .Hover1:hover+.HoverHide1 {
+     display: block;
+     color: white;
+ }
 
 
-.HoverHide2 {
-  display: none;
-}
+ .HoverHide2 {
+     display: none;
+ }
 
-.Hover2:hover + .HoverHide2 {
-  display: block;
-  color: white;
-}
+ .Hover2:hover+.HoverHide2 {
+     display: block;
+     color: white;
+ }
 
 
-h1 {
-    background-color: #212121;
-    text-indent: 20px;
-}
-p {
-    font-size: larger;
-}
-dl{
-    dt{
-    font-size: larger;
-    font-weight: bold;
-    }
-}
-ul{
-    font-size: large;
-    font-weight: bold;
-}
-.TableFlow{
-    font-size: xx-large;
-}
-.ThisWebsite{
-    font-size: xx-large;
-}
-.PhysicsEngine{
-    font-size: xx-large;
-}
-.AlgorithmsVisualizer{
-    font-size: xx-large;
-}
+ h1 {
+     background-color: #212121;
+     text-indent: 20px;
+     font-size: 2.5rem;
+ }
+
+ h3 {
+     font-size: 2rem;
+ }
+
+ p {
+     font-size: 1.5rem;
+ }
+
+ dl {
+     dt {
+         font-size: 1.5rem;
+         font-weight: bold;
+     }
+ }
+
+ ul {
+     font-size: large;
+     font-weight: bold;
+ }
+
+ .info img {
+     width: 50px;
+     height: 50px;
+     position: relative;
+     top: 15px;
+ }
+
+
+ .TableFlow {
+     font-size: xx-large;
+ }
+
+ .TableFlow .TableFlowImages {
+     padding: 0% 5%;
+ }
+
+ .ThisWebsite {
+     font-size: xx-large;
+ }
+
+ .PhysicsEngine {
+     font-size: xx-large;
+ }
+
+ .AlgorithmsVisualizer {
+     font-size: xx-large;
+ }
+
+ .SkillsContainer {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: 1fr 1fr;
+     gap: 20px;
+
+     .LanguagesText {
+         display: inline-block;
+         font-size: 1.5rem;
+         font-weight: 500;
+
+         background-color: rgba(255, 140, 0, 0.5);
+
+         padding: 6px 12px;
+
+         margin-right: 8px;
+         margin-bottom: 8px;
+
+         border-radius: 9999px;
+     }
+
+     .DatabasesText {
+         display: inline-block;
+         font-size: 1.5rem;
+         font-weight: 500;
+         background-color: rgba(0, 0, 139, 0.5);
+
+         padding: 6px 12px;
+
+         margin-right: 8px;
+         margin-bottom: 8px;
+
+         border-radius: 9999px;
+     }
+
+     .BackendsText {
+         display: inline-block;
+         font-size: 1.5rem;
+         font-weight: 500;
+         background-color: rgba(0, 204, 178, 0.5);
+
+         padding: 6px 12px;
+
+         margin-right: 8px;
+         margin-bottom: 8px;
+
+         border-radius: 9999px;
+     }
+
+     .PracticesText {
+         display: inline-block;
+         font-size: 1.5rem;
+         font-weight: 500;
+         background-color: rgba(255, 69, 0, 0.5);
+
+         padding: 6px 12px;
+
+         margin-right: 8px;
+         margin-bottom: 8px;
+
+         border-radius: 9999px;
+     }
+ }
+
+ .SkillCategory {
+     padding: 0px;
+ }
